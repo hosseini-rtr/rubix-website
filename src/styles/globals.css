@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+
+    * {
+        @apply border-light-gray;
+    }
+
+    html {
+        direction: ltr;
+    }
+
+    html[dir="rtl"] {
+        direction: rtl;
+    }
+
+    body {
+        @apply bg-deep-black text-gray-100 antialiased transition-colors duration-300;
+    }
+
+    /* Light Theme Overrides */
+    html.light body {
+        background-color: rgb(255, 255, 255);
+        color: rgb(17, 24, 39);
+    }
+
+    html.light .text-gray-100,
+    html.light .text-white {
+        color: rgb(17, 24, 39);
+    }
+
+    html.light .text-gray-300 {
+        color: rgb(55, 65, 81);
+    }
+
+    html.light .text-gray-400 {
+        color: rgb(75, 85, 99);
+    }
+
+    html.light .bg-deep-black {
+        background-color: rgb(255, 255, 255);
+    }
+
+    html.light .bg-matte-black\/80 {
+        background-color: rgba(249, 250, 251, 0.8);
+    }
+
+    html.light .glass-card {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-color: rgb(229, 231, 235);
+    }
+
+    html.light [class*="from-soft-gray"],
+    html.light [class*="via-soft-gray"],
+    html.light [class*="to-soft-gray"] {
+        --tw-gradient-from: rgb(243, 244, 246) var(--tw-gradient-from-position);
+        --tw-gradient-to: rgb(243, 244, 246) var(--tw-gradient-to-position);
+        --tw-gradient-via: rgb(243, 244, 246) var(--tw-gradient-via-position);
+    }
+
+    html.light .border-light-gray\/20,
+    html.light .border-light-gray\/10 {
+        border-color: rgba(209, 213, 219, 0.5);
+    }
+}
+
+@layer components {
+
+    /* Liquid Glass Effect */
+    .glass-card {
+        @apply bg-soft-gray/30 backdrop-blur-md border border-light-gray/20 rounded-2xl;
+        background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.05));
+        backdrop-filter: blur(20px) saturate(180%);
+        box-shadow:
+            0 8px 32px 0 rgba(0, 0, 0, 0.37),
+            inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+            inset 0 -1px 0 0 rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        position: relative;
+    }
+
+    .glass-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 40%;
+        background: linear-gradient(to bottom,
+                rgba(255, 255, 255, 0.15),
+                transparent);
+        border-radius: inherit;
+        pointer-events: none;
+    }
+
+    html.light .glass-card {
+        background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.9),
+                rgba(255, 255, 255, 0.7));
+        backdrop-filter: blur(20px) saturate(180%);
+        box-shadow:
+            0 8px 32px 0 rgba(31, 38, 135, 0.15),
+            inset 0 1px 0 0 rgba(255, 255, 255, 0.8),
+            inset 0 -1px 0 0 rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(209, 213, 219, 0.5);
+    }
+
+    .neon-border {
+        @apply border border-electric-blue/50 shadow-neon;
+    }
+
+    .text-glow {
+        @apply text-transparent bg-clip-text bg-gradient-to-r from-electric-blue to-neon-cyan;
+    }
+
+    .btn-primary {
+        @apply relative px-8 py-4 font-display font-semibold text-white bg-transparent border-2 border-electric-blue rounded-full overflow-hidden transition-all duration-300 hover:shadow-neon-lg;
+    }
+
+    .section-container {
+        @apply max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-32;
+    }
+}
+
+@layer utilities {
+    .glow-effect {
+        filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.6));
+    }
+
+    .text-shadow-glow {
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+    }
+}
