@@ -1,56 +1,13 @@
-"use client";
-
-import Navigation from "@/components/Navigation";
-import { Lightbulb, Mail, MessageCircle, Send } from "lucide-react";
-import { useState } from "react";
+import NavigationCinematic from "@/components/NavigationCinematic";
+import ContactFormCinematic from "@/components/ContactFormCinematic";
+import Footer from "@/components/Footer";
+import { Mail, MessageCircle, MapPin, Clock } from "lucide-react";
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    service: "first-turn",
-    message: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error"
-  >("idle");
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        service: "first-turn",
-        message: "",
-      });
-    }, 1500);
-  };
 
   return (
     <main className="min-h-screen bg-deep-black">
-      <Navigation />
+      <NavigationCinematic />
 
       {/* Page Header */}
       <section
@@ -67,24 +24,15 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <div className="section-container ">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div id="form" data-section="booking-form">
-            <div className="glass-card p-8">
-              <h2 className="text-2xl font-display font-bold mb-6">
-                رزرو اولین جلسه
-              </h2>
+      {/* Main Content */}
+      <section className="relative py-12 pb-32">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Contact Form */}
+            <ContactFormCinematic />
 
-              {submitStatus === "success" && (
-                <div className="mb-6 p-4 bg-electric-blue/10 border border-electric-blue/30 rounded-lg">
-                  <p className="text-electric-blue text-sm">
-                    ✓ پیام شما با موفقیت ارسال شد. به زودی با شما تماس می‌گیریم.
-                  </p>
-                </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Contact Info Cards */}
+            <div className="space-y-6">{/* Email Card */}
                 {/* Name */}
                 <div>
                   <label
