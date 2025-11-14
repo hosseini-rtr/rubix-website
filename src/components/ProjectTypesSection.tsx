@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import {
-  ShoppingCart,
   Building2,
-  Stethoscope,
   GraduationCap,
   Rocket,
+  ShoppingCart,
+  Stethoscope,
   Wallet,
 } from "lucide-react";
 
@@ -215,7 +215,10 @@ export default function ProjectTypesSection() {
                         "0.8",
                         "0.14"
                       )}, ${project.color.replace("0.8", "0.08")})`,
-                      border: `1px solid ${project.color.replace("0.8", "0.12")}`,
+                      border: `1px solid ${project.color.replace(
+                        "0.8",
+                        "0.12"
+                      )}`,
                       boxShadow: `0 6px 20px ${project.color.replace(
                         "0.8",
                         "0.08"
@@ -233,10 +236,9 @@ export default function ProjectTypesSection() {
                   <h3
                     className="text-2xl font-display font-semibold mb-3"
                     style={{
-                      background: `linear-gradient(90deg, ${project.color}, ${project.color.replace(
-                        "0.8",
-                        "0.9"
-                      )})`,
+                      background: `linear-gradient(90deg, ${
+                        project.color
+                      }, ${project.color.replace("0.8", "0.9")})`,
                       WebkitBackgroundClip: "text",
                       backgroundClip: "text",
                       color: "transparent",

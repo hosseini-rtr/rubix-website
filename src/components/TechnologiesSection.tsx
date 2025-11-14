@@ -2,14 +2,14 @@
 
 import { motion } from "framer-motion";
 import {
-  Code2,
-  Database,
-  Cloud,
-  Smartphone,
   Bot,
-  Shield,
-  Zap,
+  Cloud,
+  Code2,
   Cpu,
+  Database,
+  Shield,
+  Smartphone,
+  Zap,
 } from "lucide-react";
 
 const containerVariants = {
@@ -211,10 +211,9 @@ export default function TechnologiesSection() {
                   <h3
                     className="text-xl font-display font-semibold mb-4"
                     style={{
-                      background: `linear-gradient(90deg, ${tech.color}, ${tech.color.replace(
-                        "0.8",
-                        "0.9"
-                      )})`,
+                      background: `linear-gradient(90deg, ${
+                        tech.color
+                      }, ${tech.color.replace("0.8", "0.9")})`,
                       WebkitBackgroundClip: "text",
                       backgroundClip: "text",
                       color: "transparent",

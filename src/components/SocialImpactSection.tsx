@@ -1,7 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart, Users, Globe, Lightbulb, HandHeart, Sprout } from "lucide-react";
+import {
+  Globe,
+  HandHeart,
+  Heart,
+  Lightbulb,
+  Sprout,
+  Users,
+} from "lucide-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -119,7 +126,10 @@ export default function SocialImpactSection() {
                 boxShadow: "0 0 10px rgba(255,100,150,0.8)",
               }}
             />
-            <span className="text-sm font-medium" style={{ color: "rgba(255,100,150,1)" }}>
+            <span
+              className="text-sm font-medium"
+              style={{ color: "rgba(255,100,150,1)" }}
+            >
               Social Impact
             </span>
           </div>
@@ -225,10 +235,9 @@ export default function SocialImpactSection() {
                   <h3
                     className="text-2xl font-display font-semibold mb-3"
                     style={{
-                      background: `linear-gradient(90deg, ${area.color}, ${area.color.replace(
-                        "0.8",
-                        "0.9"
-                      )})`,
+                      background: `linear-gradient(90deg, ${
+                        area.color
+                      }, ${area.color.replace("0.8", "0.9")})`,
                       WebkitBackgroundClip: "text",
                       backgroundClip: "text",
                       color: "transparent",

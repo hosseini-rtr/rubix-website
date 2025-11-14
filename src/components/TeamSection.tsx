@@ -181,10 +181,9 @@ export default function TeamSection() {
                 <h3
                   className="text-xl font-display font-semibold mb-1"
                   style={{
-                    background: `linear-gradient(90deg, ${member.color}, ${member.color.replace(
-                      "0.8",
-                      "0.9"
-                    )})`,
+                    background: `linear-gradient(90deg, ${
+                      member.color
+                    }, ${member.color.replace("0.8", "0.9")})`,
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
                     color: "transparent",

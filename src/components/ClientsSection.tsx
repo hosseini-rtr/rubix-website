@@ -58,10 +58,7 @@ export default function ClientsSection() {
   return (
     <section className="section-container py-32 relative overflow-hidden">
       {/* Background particle field */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-      >
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div
           className="absolute right-0 top-1/4 w-[600px] h-[600px] rounded-full blur-3xl opacity-10"
           style={{
@@ -115,10 +112,7 @@ export default function ClientsSection() {
         <motion.div variants={itemVariants} className="mb-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {clients.map((client) => (
-              <div
-                key={client.name}
-                className="relative group cursor-pointer"
-              >
+              <div key={client.name} className="relative group cursor-pointer">
                 {/* Particle halo */}
                 <div
                   aria-hidden
@@ -170,10 +164,9 @@ export default function ClientsSection() {
                   <div
                     className="text-4xl font-display font-bold"
                     style={{
-                      background: `linear-gradient(135deg, ${client.color}, ${client.color.replace(
-                        "0.8",
-                        "0.6"
-                      )})`,
+                      background: `linear-gradient(135deg, ${
+                        client.color
+                      }, ${client.color.replace("0.8", "0.6")})`,
                       WebkitBackgroundClip: "text",
                       backgroundClip: "text",
                       color: "transparent",
