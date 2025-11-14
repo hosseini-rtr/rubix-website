@@ -1,7 +1,7 @@
 import NavigationCinematic from "@/components/NavigationCinematic";
 import ContactFormCinematic from "@/components/ContactFormCinematic";
 import Footer from "@/components/Footer";
-import { Mail, MessageCircle, MapPin, Clock } from "lucide-react";
+import { Mail, MessageCircle, MapPin, Clock, Send, Lightbulb } from "lucide-react";
 
 export default function ContactPage() {
 
@@ -32,141 +32,8 @@ export default function ContactPage() {
             <ContactFormCinematic />
 
             {/* Contact Info Cards */}
-            <div className="space-y-6">{/* Email Card */}
-                {/* Name */}
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-display font-semibold mb-2"
-                  >
-                    نام و نام خانوادگی *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-soft-gray/50 border border-light-gray/20 rounded-lg focus:border-electric-blue/50 focus:outline-none focus:ring-1 focus:ring-electric-blue/50 transition-colors"
-                    placeholder="علی احمدی"
-                  />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-display font-semibold mb-2"
-                  >
-                    ایمیل *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-soft-gray/50 border border-light-gray/20 rounded-lg focus:border-electric-blue/50 focus:outline-none focus:ring-1 focus:ring-electric-blue/50 transition-colors"
-                    placeholder="ali@example.com"
-                  />
-                </div>
-
-                {/* Phone */}
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-display font-semibold mb-2"
-                  >
-                    تلفن
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-soft-gray/50 border border-light-gray/20 rounded-lg focus:border-electric-blue/50 focus:outline-none focus:ring-1 focus:ring-electric-blue/50 transition-colors"
-                    placeholder="+98 912 345 6789"
-                  />
-                </div>
-
-                {/* Company */}
-                <div>
-                  <label
-                    htmlFor="company"
-                    className="block text-sm font-display font-semibold mb-2"
-                  >
-                    نام شرکت / سازمان
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-soft-gray/50 border border-light-gray/20 rounded-lg focus:border-electric-blue/50 focus:outline-none focus:ring-1 focus:ring-electric-blue/50 transition-colors"
-                    placeholder="نام شرکت شما"
-                  />
-                </div>
-
-                {/* Service Type */}
-                <div>
-                  <label
-                    htmlFor="service"
-                    className="block text-sm font-display font-semibold mb-2"
-                  >
-                    خدمت مورد نظر *
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-soft-gray/50 border border-light-gray/20 rounded-lg focus:border-electric-blue/50 focus:outline-none focus:ring-1 focus:ring-electric-blue/50 transition-colors"
-                  >
-                    <option value="first-turn">Rubix First Turn</option>
-                    <option value="loop">Rubix Loop</option>
-                    <option value="ai-tools">Rubix AI Tools</option>
-                    <option value="consultation">مشاوره عمومی</option>
-                  </select>
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-display font-semibold mb-2"
-                  >
-                    توضیحات پروژه *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 bg-soft-gray/50 border border-light-gray/20 rounded-lg focus:border-electric-blue/50 focus:outline-none focus:ring-1 focus:ring-electric-blue/50 transition-colors resize-none"
-                    placeholder="لطفا درباره پروژه یا نیاز خود توضیح دهید..."
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? "در حال ارسال..." : "ارسال درخواست"}
-                </button>
-              </form>
-
-              <p className="mt-6 text-xs text-gray-400 text-center">
-                در اولین چرخش، نقشه‌ راه شما ترسیم می‌شود.
-              </p>
+            <div className="space-y-6">
+              {/* Contact form is rendered via ContactFormCinematic; removed duplicate inline form */}
             </div>
           </div>
 
@@ -348,7 +215,7 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Footer */}
       <footer className="border-t border-light-gray/20 py-12 mt-20">
